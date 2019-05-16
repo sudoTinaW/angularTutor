@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Student } from '../../shared/student.model';
 
 @Component({
   // select: '[app-server]',
@@ -8,37 +7,28 @@ import { Student } from '../../shared/student.model';
   styleUrls: ['./server.component.css']
 })
 export class ServerComponent {
-    serverId = 10;
-    serverStatus = 'offLine';
-    counter = 0;
-    isLogin = false;
-    userName: string;
-    students: Student[] = [new Student('Bill Gates', 'Computer Science'),
-                           new Student('Steve Jobs', 'Computer Science'),
-                           new Student('Elon Musk', 'Computer Science')];
+  ingredients: string[] = [];
+  result: string;
+  isCooked = false;
 
-    getServerStatus() {
-      return this.serverStatus;
+  addIngredient(p1: string) {
+    if (!this.isCooked) {
+      this.ingredients.push(p1);
     }
+  }
 
-    counterPlus() {
-     this.counter ++;
-    }
+  clear() {
+    this.result = null;
+    this.ingredients = [];
+    this.isCooked = false;
+  }
 
-    resetCounter() {
-      this.counter = 0;
+  cook() {
+    if ((this.ingredients.includes('bread') && this.ingredients.includes('sausage') && this.ingredients.includes('lettuce')) || (this.ingredients.includes('bagel') && this.ingredients.includes('steak') && this.ingredients.includes('tomato')) || (this.ingredients.includes('english muffin') && this.ingredients.includes('egg') && this.ingredients.includes('avocado'))) {
+      this.result = 'Yummy! Good Choice!';
+    } else {
+      this.result = 'Hmmm, The Receipt is not Supported Yet!';
     }
-
-    login() {
-      this.isLogin = true;
-    }
-
-    signOut() {
-      this.isLogin = false;
-    }
-
-    // Event Binding
-    onUpdateUserName(event: Event) {
-      this.userName = (<HTMLInputElement>event.target).value;
-    }
+    this.isCooked = true;
+  }
 }
