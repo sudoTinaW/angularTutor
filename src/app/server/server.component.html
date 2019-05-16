@@ -6,15 +6,16 @@
     </div>
 
     <div class = "torso_view box_inner">
-      <div *ngFor="let ingredient of ingredients">{{ingredient}}</div>
-      <div>{{result}}</div>
+<!--      <div><span *ngFor="let ingredient of ingredients">{{ingredient}} </span></div>-->
+      <div><span>{{getContent()}} </span></div>
+<!--      <div>{{result}}</div>-->
     </div >
 
     <div class = "box_inner torso_button">
       <div class="button_row">
         <button (click)="addIngredient('bread')">Bread</button>
         <button (click)="addIngredient('bagel')">Bagel</button>
-        <button (click)="addIngredient('english muffin')">English Muffin</button>
+        <button (click)="addIngredient('wrap')">Wrap</button>
       </div>
       <div class="button_row">
         <button (click)="addIngredient('sausage')">Sausage</button>
@@ -29,7 +30,7 @@
     </div>
     <div class = "box_inner head_toe">
       <button (click)="cook()">Cook</button>
-      <button (click)="clear()">Clear</button>
+      <button (click)="clear()" class="">Clear</button>
     </div>
   </div>
 

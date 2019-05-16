@@ -26,7 +26,7 @@
   border-color: black;
   border-style: solid;
   font-family: 'Comic Sans MS', cursive;
-  font-size: 25px;
+  color:antiquewhite;
   background-color: #995eb5;
 }
 
@@ -51,6 +51,10 @@
 
 .torso_view{
   height: 40%;
+  border-radius:25px;
+  font-size:150%;
+  margin: 0 0.5em;
+
 }
 
 .torso_button{
@@ -68,16 +72,15 @@
   flex-direction: row;
 }
 
-h2{
-  color:antiquewhite;
-}
 button{
   background-color: darkorange;
   border-color:black;
   border-style: solid;
   color: white;
-  width: 9em;
+  width: 5em;
   border-radius: 5px;
+  font-size:100%;
+  margin: 0 1em;
 }
 
 
